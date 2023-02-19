@@ -1,4 +1,4 @@
-version: '3.7'
+version: '3.8'
 
 services:
   web:
@@ -10,6 +10,8 @@ services:
       - 1286:5000
     env_file:
       - ./.env.dev
+    depends_on:
+      - db
   db:
     image: postgres:12-alpine
     volumes:
